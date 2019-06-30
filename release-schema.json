@@ -1,0 +1,91 @@
+{
+  "definitions": {
+    "Organization": {
+      "persons": {
+        "title": "Persons",
+        "description": "List of persons associated with this organization",
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/Person"
+        }
+      }
+    },
+    "Person": {
+      "title": "",
+      "descrition": "",
+      "type": "object",
+      "properties": {
+        "title": {
+          "title": "Title",
+          "description": "The title of the person",
+          "type": [
+            "string",
+            "null"
+          ],
+          "opencodelist": false,
+          "enum": [
+            "Mr.",
+            "Ms.",
+            "Mrs."
+          ]
+        },
+        "name": {
+          "title": "Name",
+          "description": "The name of the person",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "identifier": {
+          "title": "Identifier",
+          "description": "The legal identifier of this person according to local identification scheme",
+          "$ref": "#/definitions/Identifier"
+        },
+        "businessFunctions": {
+          "title": "Business functions",
+          "description": "The set of business functions associated with this person",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BusinessFunction"
+          }
+        }
+      }
+    },
+    "BusinessFunction": {
+      "title": "Business function",
+      "description": "The business function specifies the type of activity or access",
+      "properties": {
+        "type": {
+          "title": "Type of the function",
+          "description": "The type of the function according to the local or international classification",
+          "type": "object",
+          "$ref": "#/definitions/Classification"
+        },
+        "jobTitle": {
+          "title": "Job title",
+          "description": "The job title of the person (for example, Financial Manager)",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "period": {
+          "title": "Period of mandate",
+          "description": "period of mandate of the function for this person",
+          "$ref": "#/definitions/Period"
+        },
+        "documents": {
+          "title": "Confirmation document",
+          "description": "docType:regulatoryDocument",
+          "type": "array",
+          "items": [
+            {
+              "$ref": "#/definitions/Document"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
