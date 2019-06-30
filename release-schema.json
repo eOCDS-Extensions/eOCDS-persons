@@ -55,10 +55,23 @@
     "BusinessFunction": {
       "title": "Business function",
       "description": "The business function specifies the type of activity or access",
+      "type":"object",
       "properties": {
-        "type": {
+        "type":{
+          "title":"Type of the function",
+          "description":"The type of the function according to the contracting process roles-model",
+          "type":"string",
+          "enum":[
+            "authority",
+            "superviser",
+            "evaluator",
+            "chairman"
+          ],
+          "oepncodelist":true
+        },
+        "classification": {
           "title": "Type of the function",
-          "description": "The type of the function according to the local or international classification",
+          "description": "The class of the function according to the local or international classification",
           "type": "object",
           "$ref": "#/definitions/Classification"
         },
