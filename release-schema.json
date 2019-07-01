@@ -67,7 +67,7 @@
             "evaluator",
             "chairman"
           ],
-          "oepncodelist":true
+          "opencodelist":true
         },
         "classification": {
           "title": "Type of the function",
