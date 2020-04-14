@@ -15,6 +15,11 @@
       "descrition": "",
       "type": "object",
       "properties": {
+        "id":{
+          "type": "string",
+          "title": "Person ID",
+          "description": "The ID used for cross-referencing to this person from other sections of the release. This field may be built with the following structure {identifier.scheme}-{identifier.id}"
+        },
         "title": {
           "title": "Title",
           "description": "The title of the person",
